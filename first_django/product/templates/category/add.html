@@ -1,0 +1,23 @@
+{% extends 'pbase.html' %}
+
+{% block content %}
+    <h1 class="text-center">Category Add</h1>
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" method="POST" action="">
+{% csrf_token %}  
+
+
+    <!-- Name -->
+    <input type="text" id="defaultContactFormName" class="form-control mb-4"name="c_name" placeholder="Cagtegory">
+
+
+
+ 
+
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Save</button>
+
+</form>
+{% endblock %}

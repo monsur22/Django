@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">Update</h1>
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" mehtod="POST" action="/firstapp/update/{{data.id}}/">
+{% csrf_token %}  
+
+
+    <!-- Name -->
+    <input type="text" id="defaultContactFormName" class="form-control mb-4"name="first_name" placeholder="first_name"value="{{ data.first_name }}">
+    <input type="text" id="defaultContactFormName" class="form-control mb-4"name="last_name" placeholder="last_name"value="{{ data.last_name }}">
+
+
+    <!-- Message -->
+    <div class="form-group">
+        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" name="desc" placeholder="Message">{{ data.desc }}</textarea>
+    </div>
+
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
+{% endblock %}

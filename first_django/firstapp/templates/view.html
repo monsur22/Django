@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load staticfiles %}  
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>  
+    <title>Document</title>
+</head>
+<body>
+ <div class="test">
+     
+ 
+    <h1>First App</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for data in datas %}
+            <tr>
+                <td > {{data.first_name}}</td>
+                <td> {{data.last_name}}</td>
+                <td> {{data.desc}}</td>
+            </tr>
+        {% endfor %}
+            
+        
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

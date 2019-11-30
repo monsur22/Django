@@ -1,0 +1,28 @@
+{% extends 'abase.html' %}
+
+{% block content %}
+    <h1 class="text-center">Login</h1>
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" enctype="multipart/form-data"method="POST" action="{% url 'uploadpassword' %}">
+
+<!-- <form class="text-center border border-light p-5" enctype="multipart/form-data"method="POST" action="account/update/pass-page"> -->
+    
+{% csrf_token %}  
+
+
+    <!-- Name -->
+  
+
+    <input type="password" id="defaultContactFormName" class="form-control mb-4"name="password" placeholder="password">
+    <input type="hidden" id="defaultContactFormName" class="form-control mb-4"name="email" value="{{ data.email }}">
+    <input type="hidden" id="defaultContactFormName" class="form-control mb-4"name="token" value="{{ data.token }}">
+    <!-- <input type="text"class="form-control" name="id" value="{{ data.id }}"> -->
+
+
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
+{% endblock %}

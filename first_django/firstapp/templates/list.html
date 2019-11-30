@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">List</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+   
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for data in datas %}
+            <tr>
+                <td > {{data.first_name}}</td>
+                <td> {{data.last_name}}</td>
+                <td> {{data.desc}}</td>
+                <td>
+            <a class="btn btn-info btn-lg" href="/firstapp/edit/{{ data.id }}">
+            Edit
+            </a>  
+            <a class="btn btn-info btn-lg" href="/firstapp/delete/{{ data.id }}">
+           Delete
+            </a>
+        </td>
+            </tr>
+        {% endfor %}
+    
+  </tbody>
+</table>
+{% endblock %}

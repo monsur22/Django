@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">Add</h1>
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" mehtod="POST" action="/firstapp/test">
+{% csrf_token %}  
+
+
+<div aling=center>
+    {{form}}
+</div>
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
+{% endblock %}

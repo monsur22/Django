@@ -1,0 +1,33 @@
+{% extends 'pbase.html' %}
+
+{% block content %}
+    <h1 class="text-center">Category List</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+   
+      <th scope="col"> Name</th>
+
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for data in datas %}
+            <tr>
+                <td > {{data.c_name}}</td>
+             
+                <td>
+            <a class="btn btn-info btn-lg" href="/product/category/edit/{{ data.id }}">
+            Edit
+            </a>  
+            <a class="btn btn-info btn-lg" href="/product/category/delete/{{ data.id }}">
+           Delete
+            </a>
+        </td>
+            </tr>
+        {% endfor %}
+    
+  </tbody>
+</table>
+{% endblock %}

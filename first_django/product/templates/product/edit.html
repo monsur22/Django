@@ -1,0 +1,43 @@
+{% extends 'pbase.html' %}
+
+{% block content %}
+    <h1 class="text-center">Update Category</h1>
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" method="POST" action="{% url 'upload' %}"enctype="multipart/form-data">
+{% comment %} <form class="text-center border border-light p-5" mehtod="POST" action=""enctype="multipart/form-data"> {% endcomment %}
+{% csrf_token %}  
+
+
+    <!-- Name -->
+
+    <input type="text" id="defaultContactFormName" class="form-control mb-4"name="p_name" value="{{ data.p_name }}"placeholder="Product Name">
+  
+      <input type="hidden"class="form-control" name="id" value="{{ data.id }}">
+   
+    <input type="text" id="defaultContactFormName" class="form-control mb-4"name="p_price" value="{{ data.p_price }}"placeholder="Product Price">
+    <textarea class="form-control mb-4" name="p_desc"id="exampleFormControlTextarea5" rows="3"placeholder="Product Description">{{ data.p_desc }}</textarea>
+    <select class="form-control mb-4"name="p_c_name">
+    <option selected disabled>Select Category</option>
+    {% for cat in cats %}
+        {% if cat.id == data.p_c_name_id %}
+        <option  value="{{cat.id}}" selected >{{cat.c_name}}</option>
+        {% else %}
+        <option  value="{{cat.id}}"  >{{cat.c_name}}</option>
+
+        {% endif %}
+    {% comment %} <option {% if cat.id == data.p_c_name %} selected {% endif %} value="{{cat.id}}" >{{cat.c_name}}</option> {% endcomment %}
+
+    {% endfor %}
+    </select>
+
+    <input type="file" id="defaultContactFormName" class="form-control mb-4" name="img" >
+
+
+
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Update</button>
+
+</form>
+{% endblock %}

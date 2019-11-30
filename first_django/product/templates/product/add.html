@@ -1,0 +1,27 @@
+{% extends 'pbase.html' %}
+
+{% block content %}
+    <h1 class="text-center">Product Add</h1>
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" method="POST" action=""enctype="multipart/form-data">
+{% csrf_token %}  
+
+
+    <!-- Name -->
+    <input type="text" id="defaultContactFormName" class="form-control mb-4"name="p_name" placeholder="Product Name">
+    <input type="text" id="defaultContactFormName" class="form-control mb-4"name="p_price" placeholder="Product Price">
+    <textarea class="form-control mb-4" name="p_desc"id="exampleFormControlTextarea5" rows="3"placeholder="Product Description"></textarea>
+    <select class="form-control mb-4"name="p_c_name">
+    <option selected disabled>Select Category</option>
+    {% for cat in cats %}
+    <option value="{{cat.id}}">{{cat.c_name}}</option>
+    {% endfor %}
+    </select>
+    <input type="file" id="defaultContactFormName" class="form-control mb-4"name="image">
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Save</button>
+
+</form>
+{% endblock %}

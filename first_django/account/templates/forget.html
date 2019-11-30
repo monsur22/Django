@@ -1,0 +1,24 @@
+{% extends 'abase.html' %}
+
+{% block content %}
+    <h1 class="text-center">Forget Password</h1>
+<!-- Default form contact -->
+<form class="text-center border border-light p-5" method="POST" action="">
+{% csrf_token %}  
+
+
+    <!-- Name -->
+  
+    <input type="email" id="defaultContactFormName" class="form-control mb-4"name="email" placeholder="email">
+    <!-- <input type="password" id="defaultContactFormName" class="form-control mb-4"name="password" placeholder="passowrd"> -->
+
+
+
+
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
+{% endblock %}
